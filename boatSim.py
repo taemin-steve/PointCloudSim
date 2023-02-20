@@ -84,8 +84,9 @@ class MyApp(ShowBase):
         # 카메라 각각의 좌표계를 설정
         camera_front = p3d.NodePath("ChildNode")
         camera_front.reparent_to(self.render)
-        camera_front.setPos(20,20,20)
-        # self.boat.reparentTo(child_node)
+        camera_front.setPos(2,2,2)
+        camera_front.set_hpr(0, 0, 45)
+        self.boat.reparentTo(camera_front)
         
         # 카메라 생성
         # base.disableMouse() # 마우스로 컨트롤을 할 수 있게 설정하는 경우 camera가 default로 이동해버림.
