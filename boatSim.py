@@ -8,7 +8,7 @@ from panda3d.core import Camera
 from panda3d.core import LPoint3f
 from panda3d.core import NodePath, LPoint3
 from panda3d.core import PerspectiveLens, LVector3
-
+import panda3d.core as p3d
 
 
 class MyApp(ShowBase):
@@ -68,7 +68,7 @@ class MyApp(ShowBase):
         make_sphere(0.1,(0,0,6),(0,0,1,1))
         make_sphere(0.1,(0,0,8),(0,1,0,1))
         
-        #보트 로드 ㅁ
+        #보트 로드
         self.boat = self.loader.loadModel("avikus_boat.glb")
         self.boat.reparentTo(self.render)
         
@@ -81,8 +81,14 @@ class MyApp(ShowBase):
         # self.camera.setPos(0, 10, 0)
         # self.camera.lookAt(0, 0, 0)
         
+        # 카메라 각각의 좌표계를 설정
+        camera_front = p3d.NodePath("ChildNode")
+        camera_front.reparent_to(self.render)
+        camera_front.setPos(20,20,20)
+        # self.boat.reparentTo(child_node)
+        
         # 카메라 생성
-        base.disableMouse() # 마우스로 컨트롤을 할 수 있게 설정하는 경우 camera가 default로 이동해버림.
+        # base.disableMouse() # 마우스로 컨트롤을 할 수 있게 설정하는 경우 camera가 default로 이동해버림.
         self.camera.setPos(20,20,20)
         self.camera.lookAt(0,0,0)
 
