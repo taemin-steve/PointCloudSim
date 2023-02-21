@@ -92,6 +92,11 @@ class MyApp(ShowBase):
         # base.disableMouse() # 마우스로 컨트롤을 할 수 있게 설정하는 경우 camera가 default로 이동해버림.
         self.camera.setPos(20,20,20)
         self.camera.lookAt(0,0,0)
+        
+        shader = Shader.load(Shader.SL_GLSL,
+                     vertex="myshader.vert",
+                     fragment="myshader.frag")
+        model.setShader(shader)
 
 app = MyApp()
 app.run()
