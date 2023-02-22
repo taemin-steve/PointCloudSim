@@ -3,6 +3,8 @@ from panda3d.core import loadPrcFileData
 from panda3d.core import Shader
 from draw_sphere import draw_sphere
 import panda3d.core as p3d
+from point_cloud import draw_pointCloud
+import numpy as np
 
 configVars = """
 win-size 1280 720
@@ -16,7 +18,7 @@ class MyGame(ShowBase):
         super().__init__()
         
         #구를 직접 생성
-        draw_sphere(self,0.1,(0,0,0),(1,0,0,1))
+        # draw_sphere(self,0.1,(0,0,0),(1,0,0,1))
         # draw_sphere(self,0.1,(0,0,2),(1,1,0,1))
         # draw_sphere(self,0.1,(0,0,4),(1,0,1,1))
         # draw_sphere(self,0.1,(0,0,6),(0,0,1,1))
@@ -28,6 +30,14 @@ class MyGame(ShowBase):
         # camera_front.setPos(2,2,2)
         # camera_front.set_hpr(0, 0, 45)
         # self.boat.reparentTo(camera_front)
+        
+        
+        # 정점 정보 생성
+        vertices = np.random.randn(300000, 3).astype(np.float32)
+        colors = np.random.uniform(0.0, 1.0, size=(300000, 3)).astype(np.float32) # 무작위 색상
+        draw_pointCloud(self, vertices, colors)
+        
+        
         
         ############################### 위쪽 부분은 point cloud 를 생성하기 위한 파트.#########################
         
