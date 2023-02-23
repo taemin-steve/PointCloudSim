@@ -17,13 +17,6 @@ class MyGame(ShowBase):
     def __init__(self):
         super().__init__()
         
-        #구를 직접 생성
-        # draw_sphere(self,0.1,(0,0,0),(1,0,0,1))
-        # draw_sphere(self,0.1,(0,0,2),(1,1,0,1))
-        # draw_sphere(self,0.1,(0,0,4),(1,0,1,1))
-        # draw_sphere(self,0.1,(0,0,6),(0,0,1,1))
-        # draw_sphere(self,0.1,(0,0,8),(0,1,0,1))
-        
         # 카메라 각각의 좌표계를 설정
         # camera_front = p3d.NodePath("ChildNode")
         # camera_front.reparent_to(self.render)
@@ -36,8 +29,6 @@ class MyGame(ShowBase):
         vertices = np.random.randn(300000, 3).astype(np.float32)
         colors = np.random.uniform(0.0, 1.0, size=(300000, 3)).astype(np.float32) # 무작위 색상
         draw_pointCloud(self, vertices, colors)
-        
-        
         
         ############################### 위쪽 부분은 point cloud 를 생성하기 위한 파트.#########################
         
