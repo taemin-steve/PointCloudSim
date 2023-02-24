@@ -143,7 +143,7 @@ def ReceiveData():
 
             for point, inputColor in zip(pc_position, pc_color):
                 vertex.setData3f(point)
-                color.setData4f(inputColor[0]/255, inputColor[1]/255, inputColor[2]/255, 1.0)
+                color.setData4f(inputColor[2]/255, inputColor[1]/255, inputColor[0]/255, 1.0) # BGRA > RGBA
 
             # point cloud buffer : fullPackets[0:bytesPoints]
             # depth buffer : fullPackets[bytesPoints:bytesPoints + bytesDepthmap] ... 4 of (lidarRes * lidarchs * 4 bytes) 
