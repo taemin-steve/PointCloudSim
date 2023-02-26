@@ -119,7 +119,7 @@ def ReceiveData():
                 #print(("index {i}, num bytes {b}").format(i=index, b=len(packet)))
                 
             # print(("Bytes of All Packets: {d}").format(d=len(fullPackets)))
-            # # to do 
+            # # # to do 
             # lidarRes = 100
             # lidarchs = 32
             # imageWidth = 256
