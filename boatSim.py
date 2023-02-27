@@ -5,6 +5,7 @@ from draw_sphere import draw_sphere
 import panda3d.core as p3d
 from point_cloud import draw_pointCloud
 import numpy as np
+from panda3d.core import LMatrix4f, LVector3f
 
 configVars = """
 win-size 1280 720
@@ -18,10 +19,13 @@ class MyGame(ShowBase):
         super().__init__()
         
         # 카메라 각각의 좌표계를 설정
-        # camera_front = p3d.NodePath("ChildNode")
-        # camera_front.reparent_to(self.render)
+        translation = LVector3f(1, 2, 3)
+        translation_matrix = LMatrix4f.translate_mat(translation) 
+        camera_front = p3d.NodePath("ChildNode")
+        camera_front.reparent_to(self.render)
         # camera_front.setPos(2,2,2)
         # camera_front.set_hpr(0, 0, 45)
+        camera_front.set_mat(translation_matrix)
         # self.boat.reparentTo(camera_front)
         
         
@@ -38,7 +42,9 @@ class MyGame(ShowBase):
         #보트 로드
         self.boat = self.loader.loadModel("avikus_boat.glb")
         self.boat.setPos(0,0,1.05)
-        self.boat.reparentTo(self.render)
+        # self.boat.reparentTo(self.render)
+        self.boat.reparentTo(camera_front)
+        
         
         
         #쉐이더 설정 
