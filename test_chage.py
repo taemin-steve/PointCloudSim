@@ -25,7 +25,8 @@ prim.addConsecutiveVertices(0, len(points))
 geom = Geom(vdata)
 geom.addPrimitive(prim)
 pointCloudNode.addGeom(geom)
-# Point cloud 노드에 적용할 머티리얼 생성
+
+
 material = Material()
 material.setShininess(1000)
         
