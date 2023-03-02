@@ -11,7 +11,7 @@ import panda3d
 
 print('Pandas Version :', panda3d.__version__)
 
-############ Main Thread
+########### Main Thread
 class SurroundView(ShowBase):
     def __init__(self):
         super().__init__()
