@@ -335,7 +335,7 @@ def ReceiveData():
                     p3d.Vec3(0, -80, 40)
                     ]
                 sensor_rot_z_array = [0, 90, 180, -90]
-                cam_pos = p3d.Vec3(0, 0, 50)
+                cam_pos = p3d.Vec3(0, 0, 5)
                 cam_rot_y = 10
 
                 localCamMat = p3d.LMatrix4f.rotateMat(cam_rot_y, p3d.Vec3(0, 1, 0)) * p3d.LMatrix4f.translateMat(cam_pos)
