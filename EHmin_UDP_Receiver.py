@@ -316,7 +316,7 @@ def ReceiveData():
                     #print(("right {}").format(right))
                     #print(("up {}").format(up))
                     #print(("forward  {}").format(forward))
-                    # row major in pand3d core but memory convention is based on the conventional column 
+                    # row major in pand3d core but memory convention is based on the conventional column major
                     matLookAt = p3d.LMatrix4f(
                         right[0], up[0], forward[0], 0.0,
                         right[1], up[1], forward[1], 0.0,
