@@ -9,7 +9,7 @@ from direct.showbase.ShowBase import ShowBase
 from panda3d.core import Shader
 import panda3d.core as p3d
 import panda3d
-
+from draw_sphere import draw_sphere
 print('Pandas Version :', panda3d.__version__)
 
 ############ Main Thread
@@ -104,6 +104,7 @@ class SurroundView(ShowBase):
             # initial setting like the above code! (for resource optimization)
             svmBase.semanticTexs = [p3d.Texture(), p3d.Texture(), p3d.Texture(), p3d.Texture()]
 
+        draw_sphere(self,1,(0,0,0), (1,1,1,1) )
         GeneratePlaneNode(self)
         self.accept('r', self.shaderRecompile)
 
