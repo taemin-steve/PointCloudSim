@@ -118,7 +118,7 @@ mySvm = SurroundView()
 
 
 #vertices = np.random.uniform(-30.0, 30.0, size=(12800, 3)).astype(np.float32)
-#colors = np.random.uniform(0.0, 1.0, size=(12800, 3)).astype(np.float32) # 무작위 색상
+#colors = np.random.uniform(0.0, 1.0, size=(12800, 3)).astype(np.float32) 
 #points = [p3d.LPoint3f(p[0], p[1], p[2]) for p in vertices]
 #print(len(points))
 
