@@ -12,7 +12,7 @@ import panda3d
 from draw_sphere import draw_sphere
 print('Pandas Version :', panda3d.__version__)
 
-############ Main 
+############ Main thread
 class SurroundView(ShowBase):
     def __init__(self):
         super().__init__()
