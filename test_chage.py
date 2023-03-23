@@ -10,7 +10,7 @@ vertices = np.random.randn(300000, 3).astype(np.float32)
 colors = np.random.uniform(0.0, 1.0, size=(300000, 3)).astype(np.float32) # 무작위 색상
 print(colors.shape)
 points = [Point3(p[0], p[1], p[2]) for p in vertices]
-# Point cloud 노드 생성 >>
+# Point cloud 노드 생성 
 pointCloudNode = GeomNode("pointCloud")
 # Geom 생성
 vformat = GeomVertexFormat.getV3c4() #아마도 Vector3, Color4 같은 느낌
